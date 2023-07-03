@@ -15,6 +15,10 @@ app.config['MYSQL_DB'] = 'minicore'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app)
 
+@app.route('/')
+def home():
+    return render_template('index.html')
+
 @app.route('/comisiones', methods=['POST'])
 def mostrar_comisiones():
     fecha_inicio = request.form.get('fecha_inicio')
