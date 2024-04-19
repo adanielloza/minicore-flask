@@ -54,9 +54,12 @@ def create_app():
     def mostrar_formulario_busqueda():
         return render_template('formulario_busqueda.html')
 
-    if __name__ == '__main__':
-        app.secret_key = "pinchellave"
-        app.run(debug=True, host='0.0.0.0', port=5003, threaded=True)
-        
+    
+    app.secret_key = "pinchellave"  
     return app
+
+
+if __name__ == '__main__':
+        create_app().run(debug=True, host='0.0.0.0', port=5003, threaded=True)
+        #app.run(debug=True, host='0.0.0.0', port=5003, threaded=True)
 
